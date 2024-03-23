@@ -1,0 +1,9 @@
+<h1>Телефонный справочник</h1>
+<ul>
+    {{#each phonebook}}
+        <li><a href="/Update/{{this.phone}}">{{this.name}} - {{this.phone}}</a></li>
+    {{/each}}
+</ul>
+<form action="/Add" method="get">
+    {{> add}}
+</form>

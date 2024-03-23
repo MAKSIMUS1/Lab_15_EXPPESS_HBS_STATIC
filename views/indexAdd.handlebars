@@ -1,0 +1,12 @@
+<h1>Телефонный справочник</h1>
+    <ul>
+        {{#each phonebook}}
+            <li>{{this.name}} - {{this.phone}}</li>
+        {{/each}}
+    </ul>
+<form id="addContactForm">
+        <input type="text" name="name" >
+        <input type="text" name="phone" >
+    {{>add}}
+    {{>refuse}}
+</form>
