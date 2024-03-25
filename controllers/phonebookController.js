@@ -20,6 +20,7 @@ module.exports = {
     },
 
     getUpdateIndex: async (req, res) => {
+        const name = req.params.name;
         const phone = req.params.phone;
         const itemToUpdate = phonebookData.find(item => item.phone === phone);
         res.render('indexUpdate', {
