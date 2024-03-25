@@ -52,13 +52,13 @@ module.exports = {
         res.redirect('/');
     },
     updateController: async (req, res) => {
-        const { name, phone } = req.body;
+        const { id, name, phone } = req.body;
         
         if (!validatePhoneNumber(phone)) {
             return res.status(400).send('Invalid phone number');
         }
 
-        const index = phonebookData.findIndex(entry => entry.phone === phone);
+        const index = phonebookData.findIndex(entry => entry.phone === id);
         if (index !== -1) {
             phonebookData[index] = { name, phone };
             fs.writeFileSync('./models/phonebookData.json', JSON.stringify(phonebookData));
