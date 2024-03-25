@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     const inputField = document.querySelector('input[name="name"]');
     const deleteButton = document.getElementById('deleteButton');
-    
+    deleteButton.disabled = true;
+
     inputField.addEventListener('input', function(event) {
         if (event.target.value.length > 0) {
             deleteButton.disabled = true;
